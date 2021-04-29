@@ -2,6 +2,11 @@
 export default [
     {
         type: "Soft Skill",
+        question: "How would you explain a complex topic to a new customer or a colleague?",
+        answer: "The purpose of this question is to test the candidate’s communication skills. Communication is one of the crucial soft skills that a candidate should have. The person might be good when it comes to the job but it won’t help the organization when they can’t communicate effectively.",
+    },
+    {
+        type: "Soft Skill",
         question: "How did you handle an urgent problem when your supervisor or manager was away?",
         answer: "This question is all about measuring the growth potential of the candidate. It is asked in order to gauge if the candidate is able to step up when called upon to make some important decisions. A good employee will know what to do when faced with such a challenge. You also want to get their perspective when it comes to being proactive in an organization setting.",
     },
