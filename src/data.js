@@ -2,6 +2,11 @@
 export default [
     {
         type: "Soft Skill",
+        question: "How did you handle an urgent problem when your supervisor or manager was away?",
+        answer: "This question is all about measuring the growth potential of the candidate. It is asked in order to gauge if the candidate is able to step up when called upon to make some important decisions. A good employee will know what to do when faced with such a challenge. You also want to get their perspective when it comes to being proactive in an organization setting.",
+    },
+    {
+        type: "Soft Skill",
         question: "What if you fail this asmt session?",
         answer: "I hope I will receive some information about what to improve and I will do my very best to do so and will try again later.",
     },
