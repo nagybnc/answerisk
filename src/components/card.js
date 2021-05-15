@@ -1,11 +1,19 @@
 import React from "react";
-import { animated, to } from "react-spring";
+import { animated, to, config, useSpring } from "react-spring";
 import { EyeIcon, TagIcon } from "@heroicons/react/outline";
 
 const Card = ({ i, x, y, rot, scale, trans, bind, data }) => {
     const { subType, question, answer } = data[i];
     const [showAnswer, setShowAnswer] = React.useState(false);
     const calculatedProgressLength = ((i + 1) / data.length) * 100;
+
+    const answerFadeStyles = useSpring({
+        config: { ...config.stiff, duration: 600 },
+        from: { opacity: 0 },
+        to: {
+            opacity: showAnswer ? 1 : 0,
+        },
+    });
 
     return (
         <animated.div
@@ -36,7 +44,9 @@ const Card = ({ i, x, y, rot, scale, trans, bind, data }) => {
                     </div>
                     <article className="h-80 py-2">
                         <p className="text-xl font-bold mb-2 text-answerix-emerald-500">{question}</p>
-                        {answer}
+                        <animated.div className="text-sm h-60 overflow-y-scroll" style={answerFadeStyles}>
+                            {answer}
+                        </animated.div>
                     </article>
                     {!showAnswer && (
                         <button
