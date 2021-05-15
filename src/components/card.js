@@ -1,11 +1,12 @@
 import React from "react";
 import { animated, to } from "react-spring";
+import { EyeIcon, TagIcon } from "@heroicons/react/outline";
 
 const Card = ({ i, x, y, rot, scale, trans, bind, data }) => {
     const { subType, question, answer } = data[i];
-    // const [showAnswer, setShowAnswer] = React.useState(false);
+    const [showAnswer, setShowAnswer] = React.useState(false);
     const calculatedProgressLength = ((i + 1) / data.length) * 100;
-    
+
     return (
         <animated.div
             key={i}
@@ -37,8 +38,30 @@ const Card = ({ i, x, y, rot, scale, trans, bind, data }) => {
                         <p className="text-xl font-bold mb-2 text-answerix-emerald-500">{question}</p>
                         {answer}
                     </article>
+                    {!showAnswer && (
+                        <button
+                            onClick={() => setShowAnswer(!showAnswer)}
+                            className={`
+                                font-semibold
+                                py-2 px-6 mx-auto
+                                flex justify-center
+                                rounded-full shadow-md
+                                transform translate-y-2 hover:scale-105
+                                bg-gradient-to-b from-answerix-emerald-500 to-answerix-teal-500
+                                text-gray-50 
+                            `}
+                        >
+                            <EyeIcon className="h-6 w-6" />
+                            <span className="ml-2">SHOW ME THE ANSWER</span>
+                        </button>
+                    )}
                 </main>
-
+                <section className="h-24 mx-12 pt-4 flex flex-row shadow-inner-top bg-answerix-gray-100 text-answerix-cyan-300">
+                    <div className="px-4 flex flex-grow flex-col justify-center items-center">
+                        <TagIcon className="h-6 w-6" />
+                        <p className="text-xs font-bold text-center">{subType}</p>
+                    </div>
+                </section>
             </animated.div>
         </animated.div>
     );
