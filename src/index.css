@@ -4,9 +4,6 @@
 @tailwind utilities;
 
 @layer utilities {
-    .max-h-500 {
-        max-height: 500px;
-    }
     .deck-wrapper {
         position: absolute;
         width: 100vw;
@@ -16,12 +13,10 @@
         justify-content: center;
     }
     .deck-body {
-        background-color: white;
         width: 450px;
         max-width: 450px;
-        height: 700px;
+        height: 650px;
         max-height: 730px;
-        border-radius: 10px;
         box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
     }
 }
