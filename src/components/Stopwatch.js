@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import StopwatchDisplay from "./StopwatchDisplay";
-import { PlayIcon, StopIcon, TrashIcon } from "@heroicons/react/solid";
+import { PlayIcon, StopIcon, TrashIcon, CogIcon } from "@heroicons/react/solid";
 
-const Stopwatch = () => {
+const Stopwatch = ({ setIsOpen }) => {
     const [isRunning, setIsRunning] = useState(false);
     const [currentTimeMs, setCurrentTimeMs] = useState(0);
     const [currentTimeSec, setCurrentTimeSec] = useState(0);
@@ -72,6 +72,9 @@ const Stopwatch = () => {
                 )}
                 <button className="h-16 w-16 p-2 rounded-full text-white bg-red-500 hover:bg-red-600 border-4 border-red-700 focus:outline-none" onClick={reset}>
                     <TrashIcon />
+                </button>
+                <button className="h-16 w-16 p-2 rounded-full text-white bg-gray-500 hover:bg-gray-600 border-4 border-gray-700 focus:outline-none" onClick={() => setIsOpen(true)}>
+                    <CogIcon />
                 </button>
             </div>
             <div className="flex">
