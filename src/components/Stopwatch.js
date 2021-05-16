@@ -77,7 +77,7 @@ const Stopwatch = ({ setIsOpen }) => {
                     <CogIcon />
                 </button>
             </div>
-            <div className="flex">
+            <div className="flex mt-2">
                 <StopwatchDisplay time={`${formatTime(currentTimeMin)}:`} />
                 <StopwatchDisplay time={`${formatTime(currentTimeSec)}:`} />
                 <StopwatchDisplay time={formatTime(currentTimeMs, "ms")} />
