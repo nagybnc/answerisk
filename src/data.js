@@ -199,14 +199,14 @@ export default [
     {
         type: "Soft Skill",
         subType: "Negotiations / Client Communication",
-        level: "Level 4",
+        level: "L3",
         question: "What shall you do if in the middle of the sprint customer management approaches you directly and asks to shift priorities and start working on the Newly Created item outside of the sprint?",
         answer: "",
     },
     {
         type: "Soft Skill",
         subType: "Negotiations / Client Communication",
-        level: "Level 3",
+        level: "L3",
         question: "Can you describe a situation where you successfully pushed your own idea or solution in the project?",
         answer: "",
     },
