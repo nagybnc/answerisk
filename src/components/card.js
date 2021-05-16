@@ -3,7 +3,7 @@ import { animated, to, config, useSpring } from "react-spring";
 import { EyeIcon, TagIcon } from "@heroicons/react/outline";
 
 const Card = ({ i, x, y, rot, scale, trans, bind, data }) => {
-    const { subType, question, answer } = data[i];
+    const { type, subType, question, answer } = data[i];
     const [showAnswer, setShowAnswer] = React.useState(false);
     const calculatedProgressLength = ((i + 1) / data.length) * 100;
 
@@ -33,10 +33,13 @@ const Card = ({ i, x, y, rot, scale, trans, bind, data }) => {
                 <header className="h-8 w-full mb-8 rounded-t-lg bg-answerix-dark-blue-800"></header>
 
                 <main className="h-card mx-6 pt-6 px-6 bg-white shadow-lg">
-                    <p className="text-5xl text-gray-700">
-                        {i + 1}
-                        <span className="text-lg text-gray-400"> OF {data.length}</span>
-                    </p>
+                    <div className="flex justify-between items-start">
+                        <p className="text-5xl text-gray-700">
+                            {i + 1}
+                            <span className="text-lg text-gray-400"> OF {data.length}</span>
+                        </p>
+                        <p className="p-2 rounded-lg text-white bg-answerix-cyan-300">{type}</p>
+                    </div>
                     <div className="relative pt-1">
                         <div className="text-xs h-2 mb-4 overflow-hidden flex rounded bg-teal-100">
                             <div style={{ width: `${calculatedProgressLength}%` }} className="bg-answerix-emerald-500"></div>
