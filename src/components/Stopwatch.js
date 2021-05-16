@@ -15,7 +15,7 @@ const Stopwatch = () => {
         if (isRunning) {
             intervalId = setInterval(() => {
                 setCurrentTimeMs(currentTimeMs + 10);
-                if (currentTimeMs >= 1000) {
+                if (currentTimeMs >= 990) {
                     setCurrentTimeSec(currentTimeSec + 1);
                     setCurrentTimeMs(0);
                 }
@@ -74,7 +74,11 @@ const Stopwatch = () => {
                     <TrashIcon />
                 </button>
             </div>
-            <StopwatchDisplay formatTime={formatTime} currentTimeMs={currentTimeMs} currentTimeSec={currentTimeSec} currentTimeMin={currentTimeMin} />
+            <div className="flex">
+                <StopwatchDisplay time={`${formatTime(currentTimeMin)}:`} />
+                <StopwatchDisplay time={`${formatTime(currentTimeSec)}:`} />
+                <StopwatchDisplay time={formatTime(currentTimeMs, 'ms')} />
+            </div>
         </div>
     );
 };

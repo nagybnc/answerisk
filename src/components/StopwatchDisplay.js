@@ -1,14 +1,10 @@
 import React from 'react';
 
-const StopwatchDisplay = ({formatTime, currentTimeMs, currentTimeSec, currentTimeMin}) => {
+const StopwatchDisplay = ({time}) => {
     return (
-        <div>
-            <span className="text-6xl font-bold tabular-nums text-answerix-dark-blue-800">
-                {formatTime(currentTimeMin)}:
-                {formatTime(currentTimeSec)}:
-                {formatTime(currentTimeMs, 'ms')}
-            </span>
-        </div>
+        <p className="w-24 text-6xl font-bold flex text-answerix-dark-blue-800">
+            {time}
+        </p>
     );
 }
 
