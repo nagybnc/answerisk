@@ -38,7 +38,7 @@ const Card = ({ i, x, y, rot, scale, trans, bind, data }) => {
                             {i + 1}
                             <span className="text-lg text-gray-400"> OF {data.length}</span>
                         </p>
-                        <p className="p-2 rounded-lg text-white bg-answerix-cyan-300">{type}</p>
+                        <p className="p-2 rounded-lg text-white text-xs bg-answerix-cyan-300">{type}</p>
                     </div>
                     <div className="relative pt-1">
                         <div className="text-xs h-2 mb-4 overflow-hidden flex rounded bg-teal-100">
