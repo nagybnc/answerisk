@@ -14,7 +14,7 @@ const trans = (r, s) => `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg
 function Deck() {
     const [gone] = useState(() => new Set());
 
-    const [props, set] = useSprings(data.length, (i) => ({
+    const [props = [], set] = useSprings(data.length, (i) => ({
         ...to(i),
         from: from(i),
     }));
@@ -40,16 +40,6 @@ function Deck() {
         return () => window.removeEventListener("keydown", swipe);
     });
 
-    React.useEffect(() => {
-        const swipe = (e) => {
-            const index = (Array.from(gone).pop() || data.length) - 1;
-            console.log(index+1);
-        };
-        window.addEventListener("keydown", swipe);
-
-        return () => window.removeEventListener("keydown", swipe);
-    });
-
     const bind = useDrag(({ args: [index], down, movement: [mx], direction: [xDir], velocity }) => {
         const trigger = velocity > 0.2; // If you flick hard enough it should trigger the card to fly out
         const dir = xDir < 0 ? -1 : 1; // Direction should either point left or right
@@ -65,7 +55,11 @@ function Deck() {
         // RESTART Game
         if (!down && gone.size === data.length) setTimeout(() => gone.clear() || set((i) => to(i)), 600);
     });
-    return props.map(({ x, y, rot, scale }, i) => <Card key={i} i={i} x={x} y={y} rot={rot} scale={scale} trans={trans} data={data} bind={bind} />);
+    return (
+        <div className="relative h-full" style={{marginTop: (props.length - 1) * 4}}>
+            {props.map(({ x, y, rot, scale }, i) => <Card key={i} i={i} x={x} y={y} rot={rot} scale={scale} trans={trans} data={data} bind={bind} />) }
+        </div>
+    )
 }
 
 export default Deck;
