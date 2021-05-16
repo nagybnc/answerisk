@@ -1,6 +1,6 @@
 {
-  "name": "static-flashcards",
-  "version": "0.1.0",
+  "name": "answerisk",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.1.1",
