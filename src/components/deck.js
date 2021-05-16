@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSprings } from "react-spring";
 import { useDrag } from "react-use-gesture";
 
-import Card from "./card";
+import Card from "./Card";
 import data from "../data.js";
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
