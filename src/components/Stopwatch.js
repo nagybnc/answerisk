@@ -61,23 +61,23 @@ const Stopwatch = () => {
         <div className="mt-4 flex flex-col items-center">
             <div className="flex justify-center gap-4">
                 {isRunning === false && (
-                    <button className="h-16 w-16 p-2 rounded-full text-white bg-green-500 hover:bg-green-600 border-4 border-green-700" onClick={start}>
+                    <button className="h-16 w-16 p-2 rounded-full text-white bg-green-500 hover:bg-green-600 border-4 border-green-700 focus:outline-none" onClick={start}>
                         <PlayIcon />
                     </button>
                 )}
                 {isRunning === true && (
-                    <button className="h-16 w-16 p-2 rounded-full text-white bg-yellow-500 hover:bg-yellow-600 border-4 border-yellow-700" onClick={stop}>
+                    <button className="h-16 w-16 p-2 rounded-full text-white bg-yellow-500 hover:bg-yellow-600 border-4 border-yellow-700 focus:outline-none" onClick={stop}>
                         <StopIcon />
                     </button>
                 )}
-                <button className="h-16 w-16 p-2 rounded-full text-white bg-red-500 hover:bg-red-600 border-4 border-red-700" onClick={reset}>
+                <button className="h-16 w-16 p-2 rounded-full text-white bg-red-500 hover:bg-red-600 border-4 border-red-700 focus:outline-none" onClick={reset}>
                     <TrashIcon />
                 </button>
             </div>
             <div className="flex">
                 <StopwatchDisplay time={`${formatTime(currentTimeMin)}:`} />
                 <StopwatchDisplay time={`${formatTime(currentTimeSec)}:`} />
-                <StopwatchDisplay time={formatTime(currentTimeMs, 'ms')} />
+                <StopwatchDisplay time={formatTime(currentTimeMs, "ms")} />
             </div>
         </div>
     );
