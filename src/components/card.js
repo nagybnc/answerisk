@@ -3,7 +3,7 @@ import { animated, to, config, useSpring } from "react-spring";
 import { EyeIcon, TagIcon } from "@heroicons/react/outline";
 
 const Card = ({ i, x, y, rot, scale, trans, bind, data }) => {
-    const { type, subType, question, answer } = data[i];
+    const { type, subType, level, question, answer } = data[i];
     const [showAnswer, setShowAnswer] = React.useState(false);
     const calculatedProgressLength = ((i + 1) / data.length) * 100;
 
@@ -38,7 +38,10 @@ const Card = ({ i, x, y, rot, scale, trans, bind, data }) => {
                             {i + 1}
                             <span className="text-lg text-gray-400"> OF {data.length}</span>
                         </p>
-                        <p className="p-2 rounded-lg text-white text-xs bg-answerix-cyan-300">{type}</p>
+                        <p className="p-2 rounded-lg text-white text-xs bg-answerix-cyan-300">
+                            <span className="rounded-full p-1 mr-2 text-answerix-cyan-300 bg-white">{level}</span>
+                            {type}
+                        </p>
                     </div>
                     <div className="relative pt-1">
                         <div className="text-xs h-2 mb-4 overflow-hidden flex rounded bg-teal-100">
