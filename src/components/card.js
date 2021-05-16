@@ -48,7 +48,9 @@ const Card = ({ i, x, y, rot, scale, trans, bind, data }) => {
                     <article className="h-80 py-2">
                         <p className="text-xl font-bold mb-2 text-answerix-emerald-500">{question}</p>
                         <animated.div className="text-sm h-60 overflow-y-scroll" style={answerFadeStyles}>
-                            {answer}
+                            {answer
+                                ? answer
+                                : "No answer! No answer is also an answer."}
                         </animated.div>
                     </article>
                     {!showAnswer && (
