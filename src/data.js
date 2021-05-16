@@ -3,7 +3,7 @@ export default [
     {
         type: "Soft Skill",
         subType: "Onboarding, Learning & Development, Mentoring",
-        level: "L3",
+        level: "L4",
         question: "You have some experience delivering public speech. What are the best practices of giving public speech? Which things should be avoided?",
         answer: "",
     },
