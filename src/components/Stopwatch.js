@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import StopwatchDisplay from "./StopwatchDisplay";
-import { PlayIcon, StopIcon, TrashIcon, CogIcon } from "@heroicons/react/solid";
+import { PlayIcon, PauseIcon, StopIcon, CogIcon } from "@heroicons/react/solid";
 
 const Stopwatch = ({ setIsOpen }) => {
     const [isRunning, setIsRunning] = useState(false);
@@ -67,12 +67,14 @@ const Stopwatch = ({ setIsOpen }) => {
                 )}
                 {isRunning === true && (
                     <button className="h-16 w-16 p-2 rounded-full text-white bg-yellow-500 hover:bg-yellow-600 border-4 border-yellow-700 focus:outline-none" onClick={stop}>
+                        <PauseIcon />
+                    </button>
+                )}
+                {(currentTimeMs !== 0 || currentTimeSec !== 0 || currentTimeMin !== 0)  && (
+                    <button className="h-16 w-16 p-2 rounded-full text-white bg-red-500 hover:bg-red-600 border-4 border-red-700 focus:outline-none" onClick={reset}>
                         <StopIcon />
                     </button>
                 )}
-                <button className="h-16 w-16 p-2 rounded-full text-white bg-red-500 hover:bg-red-600 border-4 border-red-700 focus:outline-none" onClick={reset}>
-                    <TrashIcon />
-                </button>
                 <button className="h-16 w-16 p-2 rounded-full text-white bg-gray-500 hover:bg-gray-600 border-4 border-gray-700 focus:outline-none" onClick={() => setIsOpen(true)}>
                     <CogIcon />
                 </button>
